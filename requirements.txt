@@ -1,5 +1,5 @@
-# Bare minimum
-django-cms==2.4.1
+#django-cms
+https://github.com/divio/django-cms/archive/3.0.0.beta3.zip
 
 #Optional, recommended packages
 Pillow
