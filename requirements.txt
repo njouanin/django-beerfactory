@@ -1,0 +1,11 @@
+# Bare minimum
+django-cms==2.4.1
+
+#Optional, recommended packages
+Pillow
+django-filer
+cmsplugin-filer
+django-reversion==1.7
+django-blog-zinnia
+cmsplugin_zinnia
+
