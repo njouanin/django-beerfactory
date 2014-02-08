@@ -8,4 +8,6 @@ cmsplugin-filer
 django-reversion==1.7
 django-blog-zinnia
 cmsplugin_zinnia
-
+djangocms_link
+djangocms_text_ckeditor
+Docutils
