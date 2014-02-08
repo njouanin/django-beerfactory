@@ -125,22 +125,26 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.comments',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
+    'djangocms_admin_style',
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'djangocms_text_ckeditor',  # note this needs to be above the 'cms' entry
     'cms',
     'mptt',
     'menus',
     'south',
     'sekizai',
     'cms.plugins.file',
-    'cms.plugins.link',
     'cms.plugins.picture',
     'cms.plugins.teaser',
+    'cms.plugins.video',
+    'djangocms_link',
     'cms.plugins.video',
     'filer',
     'cmsplugin_filer_file',
@@ -198,6 +202,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
+    ('index.html', _('Index')),
     ('template_1.html', 'Template One'),
 )
 
@@ -206,3 +211,5 @@ LANGUAGES = [
     ('en', _('Anglais')),
 ]
 DEFAULT_LANGUAGE = 1
+
+ZINNIA_MARKUP_LANGUAGE = 'restructuredtext'
