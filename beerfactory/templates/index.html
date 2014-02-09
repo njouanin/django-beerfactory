@@ -1,0 +1,35 @@
+{% extends "squelette.html" %}
+{% load cms_tags %}
+
+{% block title %}Bière, octets et transistors{% endblock title %}
+
+{% block base_content %}
+<section role="main">
+    <header class="hidden-sm" id="index">
+        <div class="container" class="header">
+            <h1><i class="icon-beer icon-2x"></i>
+                &nbsp;Beerfactory</h1>
+            <p>Blog et projets autour de la bière, l'informatique et l'électronique</p>
+        </div>
+    </header>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+        	{% placeholder index_header_content %}
+        </div>
+        <div class="col-md-9">
+        	{% placeholder index_main_content %}
+        </div>
+        <aside class="col-md-3">
+        	{% placeholder index_right_content %}
+        </aside>
+    </div>
+    <div class="row">
+        <div class="col-md-12 a-header">
+        	{% placeholder index_footer_content %}
+        </div>
+    </div>
+</section>
+{% endblock %}

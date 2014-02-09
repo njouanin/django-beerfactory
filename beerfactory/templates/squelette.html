@@ -1,0 +1,86 @@
+
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+{% load cms_tags sekizai_tags %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ LANGUAGE_CODE }}> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="{{ LANGUAGE_CODE }}> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="{{ LANGUAGE_CODE }}> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ LANGUAGE_CODE }}"> <!--<![endif]-->
+    <head>
+        <title>Beerfactory - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="cache-control" content="public" />
+        <meta name="robots" content="follow, all" />
+        <meta name="language" content="{{ LANGUAGE_CODE }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{% block meta-description %}{% trans "Beerfactory website." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+        <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+        <meta name="author" content="Nico" />
+        {% block meta %}{% endblock meta %}
+
+        {% render_block "css" %}
+        <link rel="stylesheet" href="{% static "beerfactory/css/bootstrap.min.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "beerfactory/css/bootstrap-theme.min.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "beerfactory/css/font-awesome.min.css" %}">
+        <link rel="stylesheet" href="{% static "beerfactory/css/local.css" %}">
+
+    </head>
+
+    <body>
+        {% cms_toolbar %}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">{{ SITENAME }}</a>
+              </div>
+             <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <!-- Left Nav Section -->
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ SITEURL }}"><i class="icon-home"></i></a></li>
+                            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                </ul>
+              <!-- Right Nav Section -->
+                <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                </ul>
+              </div>
+          </div>
+        </nav>
+
+        {% placeholder base_content %}
+        {% block base_content %}{% endblock %}
+
+        <footer role="contentinfo">
+            <div class="container">
+                <p>Conçu avec <a href="http://blog.getpelican.com/">Pelican</a> et <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+                <p>Code publié sous la licence <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache v2.0</a>, documentation sous la licence <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+                <ul class="list-inline">
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                        {% for page in PAGES %}
+                            {% if "footer" in page.section %}
+                            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </footer>
+
+        {% render_block "js" %}
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static "beerfactory/js/vendor/jquery.js" %}"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{% static "beerfactory/js/bootstrap.min.js" %}"></script>
+    </body>
+</html>
