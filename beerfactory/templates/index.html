@@ -6,28 +6,28 @@
 {% block base_content %}
 <section role="main">
     <header class="hidden-sm" id="index">
-        <div class="container" class="header">
+        <div class="container">
             <h1><i class="icon-beer icon-2x"></i>
                 &nbsp;Beerfactory</h1>
-            <p>Blog et projets autour de la bière, l'informatique et l'électronique</p>
+            <p class="lead">Blog et projets autour de la bière, l'informatique et l'électronique</p>
         </div>
     </header>
 </section>
 
 <section class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
         	{% placeholder index_header_content %}
         </div>
-        <div class="col-md-9">
+        <div class="col-sm-8">
         	{% placeholder index_main_content %}
         </div>
-        <aside class="col-md-3">
+        <aside class="col-sm-3 col-sm-offset-1">
         	{% placeholder index_right_content %}
         </aside>
     </div>
     <div class="row">
-        <div class="col-md-12 a-header">
+        <div class="col-sm-12 a-header">
         	{% placeholder index_footer_content %}
         </div>
     </div>
