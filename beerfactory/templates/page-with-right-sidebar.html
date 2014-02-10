@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+{% load cms_tags %}
+
+{% block page_content %}
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% block page_header_content %}{% endblock page_header_content %}
+        </div>
+        <div class="col-sm-8">
+            {% block page_main_content %}{% endblock page_main_content %}
+        </div>
+        <aside class="col-sm-3 col-sm-offset-1">
+            {% block page_right_content %}{% endblock page_right_content %}
+        </aside>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 a-header">
+            {% block page_footer_content %}{% endblock page_footer_content %}
+        </div>
+    </div>
+</section>
+{% endblock page_content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block base_content %}
+<section role="main">
+    <header class="hidden-sm" id="index">
+        <div class="container">
+            <h1>{% block page-icon %}<i class="fa fa-beer fa-2x"></i>{% endblock %}
+                &nbsp;{% block page-title %}{% endblock page-title %}</h1>
+        </div>
+    </header>
+</section>
+
+{% block page_content %}{% endblock page_content %}
+{% endblock base_content %}
