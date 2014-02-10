@@ -2,8 +2,8 @@
 
 {% load cms_tags %}
 
-{% block content %}
+{% block squel_content %}
 	{{ block.super }}
 	{% placeholder base_content %}
-    {% block base_content %}{% endblock %}
-{% endblock %}
+    {% block base_content %}{% endblock base_content %}
+{% endblock squel_content %}
