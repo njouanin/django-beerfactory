@@ -1,12 +1,9 @@
-{% load cms_tags sekizai_tags %}
-<html>
-  <head>
-      {% render_block "css" %}
-  </head>
-  <body>
-      {% cms_toolbar %}
-      {% placeholder base_content %}
-      {% block base_content %}{% endblock %}
-      {% render_block "js" %}
-  </body>
-</html>
+{% extends "squelette.html" %}
+
+{% load cms_tags %}
+
+{% block content %}
+	{{ block.super }}
+	{% placeholder base_content %}
+    {% block base_content %}{% endblock %}
+{% endblock %}
