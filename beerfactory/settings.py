@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     #'cms.plugins.video',
     'djangocms_link',
     'filer',
+    'easy_thumbnails',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
