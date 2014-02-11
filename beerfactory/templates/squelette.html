@@ -40,7 +40,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">{{ SITENAME }}</a>
+                <a class="navbar-brand" href="#">Beerfactory</a>
               </div>
              <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -62,7 +62,8 @@
 
         <footer role="contentinfo">
             <div class="container">
-                <p>Conçu avec <a href="http://blog.getpelican.com/">Pelican</a> et <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+                {% block squel_footer %}{% endblock squel_footer %}
+                <p>Conçu avec <a href="http://getbootstrap.com/">Bootstrap</a>, propulsé par <a href="https://www.djangoproject.com/">Django CMS</a>.</p>
                 <p>Code publié sous la licence <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache v2.0</a>, documentation sous la licence <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
                 <ul class="list-inline">
                     {% if DISPLAY_PAGES_ON_MENU %}
