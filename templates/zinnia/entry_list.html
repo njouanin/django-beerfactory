@@ -19,8 +19,8 @@
 {% endblock link %}
 
 {% block title %}{% if category %}{% trans "Category" %} {{ category }}{% endif %}{% if tag %}{% trans "Tag" %} {{ tag }}{% endif %}{% if author %}{% trans "Author" %} {{ author }}{% endif %}{% endblock title %}
+{% block page-icon %}{% if category %}<i class="fa fa-folder-open"></i>{% endif %}{% if tag %}<i class="fa fa-tag"></i>{% endif %}{% if author %}<i class="fa fa-user"></i>{% endif %}{% endblock page-icon %}
 
-{% block page-icon %}<i class="fa fa-archive"></i>{% endblock %}
 {% block page-title %}
 {% if category %}
 {% blocktrans %}Category archives: {{ category }}{% endblocktrans %}</h1>
