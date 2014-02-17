@@ -3,7 +3,19 @@ from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from cms.sitemaps import CMSSitemap
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
+
 admin.autodiscover()
+
+sitemaps = {'tags': TagSitemap,
+            'blog': EntrySitemap,
+            'authors': AuthorSitemap,
+            'categories': CategorySitemap,
+            'cmspages': CMSSitemap}
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,6 +30,10 @@ urlpatterns = patterns('',
     url(r'^blog/', include('zinnia.urls')),
 	url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^', include('cms.urls')),
+
+    #sitemap
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
 )
 
 if settings.DEBUG:
