@@ -89,5 +89,18 @@
           ga('create', 'UA-37658015-2', 'beerfactory.org');
           ga('send', 'pageview');
         </script>
+
+        <!-- Using MathJax, with the delimiters $ -->
+        <!-- Conflict with pygments for the .mo and .mi -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "HTML-CSS": {
+          styles: {
+          ".MathJax .mo, .MathJax .mi": {color: "inherit"}}
+          },
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+          });
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     </body>
 </html>
