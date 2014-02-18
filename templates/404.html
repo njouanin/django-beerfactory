@@ -1,0 +1,15 @@
+{% extends "zinnia/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Page not found" %}{% endblock title %}
+{% block page-title %}{% trans "Page not found" %}{% endblock page-title %}
+{% block page-icon %}<i class="fa fa-bug"></i>{% endblock page-icon %}
+
+
+{% block content %}
+<h2>{% trans "Page not found" %}</h2>
+
+<p>{% trans "Sorry, but the requested page could not be found." %}</p>
+
+{{ block.super }}
+{% endblock content %}
