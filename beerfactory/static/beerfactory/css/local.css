@@ -138,6 +138,10 @@ p.entry-info:before {
     content: "\f044";
 }
 
+.hentry {
+    margin-bottom: 1em;
+}
+
 .entry-title {
     margin: 0;
 }
