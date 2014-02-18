@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{% static "beerfactory/css/bootstrap-theme.min.css" %}" media="screen">
         <link rel="stylesheet" href="{% static "beerfactory/css/font-awesome.min.css" %}">
         <link rel="stylesheet" href="{% static "beerfactory/css/local.css" %}">
+        <link rel="stylesheet" href="{% static "beerfactory/css/pygments.css" %}">
 
     </head>
 
@@ -46,13 +47,10 @@
               <div class="collapse navbar-collapse navbar-ex1-collapse">
               <!-- Left Nav Section -->
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ SITEURL }}"><i class="fa fa-home"></i></a></li>
-                            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                    <li><a href="{{ link }}">{{ title }}</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-home"></i></a></li>
                 </ul>
               <!-- Right Nav Section -->
                 <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
                 </ul>
               </div>
           </div>
@@ -91,5 +89,18 @@
           ga('create', 'UA-37658015-2', 'beerfactory.org');
           ga('send', 'pageview');
         </script>
+
+        <!-- Using MathJax, with the delimiters $ -->
+        <!-- Conflict with pygments for the .mo and .mi -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "HTML-CSS": {
+          styles: {
+          ".MathJax .mo, .MathJax .mi": {color: "inherit"}}
+          },
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+          });
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     </body>
 </html>

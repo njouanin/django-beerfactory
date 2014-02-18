@@ -11,3 +11,4 @@ cmsplugin_zinnia
 djangocms_link
 djangocms_text_ckeditor
 Docutils
+Pygments
