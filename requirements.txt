@@ -5,9 +5,10 @@ https://github.com/divio/django-cms/archive/3.0.0.beta3.zip
 Pillow
 django-filer
 cmsplugin-filer
-django-reversion==1.7
+django-reversion==1.8
 django-blog-zinnia
 cmsplugin_zinnia
 djangocms_link
 djangocms_text_ckeditor
 Docutils
+Pygments
