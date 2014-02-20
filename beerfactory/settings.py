@@ -223,3 +223,8 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+<<<<<<< HEAD
+=======
+
+CMSPLUGIN_ZINNIA_APP_MENUS = []
+>>>>>>> a25a4a889d7254bdc97571b94f24d9698281be33

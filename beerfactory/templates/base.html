@@ -2,6 +2,12 @@
 
 {% load cms_tags %}
 
+{% block squel_right_menu %}
+	{{ block.super }}
+	{% placeholder base_content %}
+    {% block base_right_menu %}{% endblock base_right_menu %}
+{% endblock squel_right_menu %}
+
 {% block squel_content %}
 	{{ block.super }}
 	{% placeholder base_content %}
