@@ -206,7 +206,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 CMS_TEMPLATES = (
     ('index.html', _('Index')),
     ('page.html', _('Page largeur entiere')),
-    ('page-with-right-sidebar.html', _('Page avec barre laterale droite')),
+    ('page-with-right-sidebar-template.html', _('Page avec barre laterale droite')),
 )
 
 LANGUAGES = [
