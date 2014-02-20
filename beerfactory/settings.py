@@ -4,7 +4,7 @@ gettext = lambda s: s
 PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 
 # Django settings for beerfactory project.
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
