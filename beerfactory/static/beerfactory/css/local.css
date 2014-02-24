@@ -239,3 +239,13 @@ a:visited {
     color: #c79838;
     text-decoration: none;
 }
+
+.bs-callout-info {
+    background-color: #F4F8FA;
+    border-color: #5BC0DE;
+}
+.bs-callout {
+    margin: 20px 0px;
+    padding: 20px;
+    border-left: 3px solid #EEE;
+}

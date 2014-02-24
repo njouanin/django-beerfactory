@@ -12,7 +12,13 @@
 </section>
 
 {% block page_content %}
-{% placeholder page_content %}
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+		{% placeholder page_content %}
+        </div>
+    </div>
+</section>
 {% endblock page_content %}
 
 {% endblock base_content %}
