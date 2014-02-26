@@ -43,9 +43,13 @@
          title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
          rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}
       {% endfor %}
-      {% endif %}.
+      {% endif %}
       {% endwith %}
       {% endblock entry-categories %}
+      {% if object.comments_are_open %}
+      &nbsp;|&nbsp;<i class="fa fa-comments">&nbsp;</i><a href="{{ object.get_absolute_url }}#disqus_thread"
+         title="{% blocktrans with object=object.title %}Leave a comment on {{ object }}{% endblocktrans %}"></a>.
+      {% endif %}
     </p>
     {% endblock entry-info %}
   </div>
@@ -113,15 +117,6 @@
     {% endblock entry-shorturl %}
     {% block entry-discussions %}
     <p class="entry-discussions">
-      <i class="fa fa-comments">&nbsp;</i><strong>{% trans "Discussions" %}</strong> :
-      {% block entry-comments %}
-      {% if object.comments_are_open %}
-      <a href="{{ object.get_absolute_url }}#disqus_thread"
-         title="{% blocktrans with object=object.title %}Leave a comment on {{ object }}{% endblocktrans %}">
-        {% trans "Be first to comment!" %}
-      </a>
-      {% endif %}
-      {% endblock entry-comments %}
       {% block entry-pingbacks %}
       {% with pingback_count=object.pingback_count %}
       {% if pingback_count %}
