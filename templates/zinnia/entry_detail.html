@@ -7,6 +7,66 @@
 {% block page-title %}Beerfactory Blog{% endblock page-title %}
 {% block title %}{{ object.title }}{% endblock title %}
 
+{% block entry-widgets %}
+<div class="entry-widgets">
+  {% block entry-next-entry %}
+  {% with next_entry=object.next_entry %}
+  {% if next_entry %}
+  <div class="col-sm-4 entry-next">
+    <div class="row">
+      <h3>{% trans "Next entry" %}</h3>
+      <p>
+        <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
+          {{ next_entry.title }}
+        </a>
+      </p>
+      </div>
+  </div>
+  {% endif %}
+  {% endwith %}
+  {% endblock entry-next-entry %}
+  {% block entry-previous-entry %}
+  {% with previous_entry=object.previous_entry %}
+  {% if previous_entry %}
+  <div class="col-sm-4 entry-previous">
+    <div class="row">
+      <h3>{% trans "Previous entry" %}</h3>
+      <p>
+        <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
+          {{ previous_entry.title }}
+        </a>
+      </p>
+    </div>
+  </div>
+  {% endif %}
+  {% endwith %}
+  {% endblock entry-previous-entry %}
+  {% block entry-related-entries %}
+  {% with entry_related=object.related_published %}
+  {% if entry_related %}
+  <div class="entry-related">
+    <h3>{% trans "Related entries" %}</h3>
+    <ul>
+      {% for entry in entry_related %}
+      <li>
+<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% endwith %}
+  {% endblock entry-related-entries %}
+  {% block entry-similar-entries %}
+  <div class="entry-similar">
+    <h3>{% trans "Similar entries" %}</h3>
+    {% get_similar_entries %}
+  </div>
+  {% endblock entry-similar-entries %}
+</div>
+{% endblock entry-widgets %}
+
+
 {% block entry-comments %}
 <div id="comments">
   <h3>{% trans "Comments" %}</h3>
