@@ -1,6 +1,11 @@
 body {
     padding-top: 51px;
     color: #57565E;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
