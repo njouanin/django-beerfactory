@@ -99,7 +99,7 @@
       {% for tag in object.tags_list %}
       <a href="{% url 'zinnia_tag_detail' tag %}"
          title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
-         rel="tag"><span class="label label-default">{{ tag }}</span></a>{% if not forloop.last %}&nbsp;{% endif %}
+         rel="tag">{{ tag }}</a>{% if not forloop.last %}&nbsp;{% endif %}
       {% empty %}
       <span>{% trans "No tags" %}</span>
       {% endfor %}

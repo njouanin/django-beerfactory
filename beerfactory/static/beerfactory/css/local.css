@@ -3,6 +3,11 @@ body {
     color: #57565E;
 }
 
+a {
+    color: #be6a38;
+    text-decoration: none;
+}
+
 header {
     margin-bottom: 20px;
 }
@@ -94,6 +99,10 @@ p.entry-info:before {
     text-align: justify;
 }
 
+p.continue-reading {
+        text-align: right;
+}
+
 .continue-reading a:after {
     content: "⇒";
 }
@@ -149,8 +158,33 @@ footer {
     background-color: #F4F8FA;
     border-color: #5BC0DE;
 }
+
 .bs-callout {
     margin: 20px 0px;
     padding: 20px;
     border-left: 3px solid #EEE;
+}
+
+a.tag-1 {
+    font-size:90%;
+}
+
+a.tag-2 {
+    font-size:100%;
+}
+
+a.tag-3 {
+    font-size:110%;
+}
+
+a.tag-4 {
+    font-size:120%;
+}
+
+a.tag-5 {
+    font-size:130%;
+}
+
+a.tag-6 {
+    font-size:140%;
 }
