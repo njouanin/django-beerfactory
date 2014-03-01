@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load cms_tags %}
+{% load sekizai_tags %}
 
 {% block title %}Accueil{% endblock title %}
+
 
 {% block base_content %}
 <section role="main">
@@ -13,6 +15,22 @@
         </div>
     </header>
 </section>
+
+<div id="social-buttons" class="hidden-print">
+{% addtoblock "js" %}
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+{% endaddtoblock %}
+  <div class="container">
+    <ul class="list-inline">
+      <li class="follow-btn">
+        <a href="https://twitter.com/beerfactory_org" class="twitter-follow-button" data-show-count="true">Follow @beerfactory_org</a>
+      </li>
+      <li class="tweet-btn hidden-phone">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.beerfactory.org" data-text="Beerfactory, Blog et projets autour de la bière, l'informatique et l'électronique" data-counturl="http://www.beerfactory.org" data-count="horizontal" data-via="fontawesome" >Tweet</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <section class="container">
     <div class="row">
